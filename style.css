@@ -1,0 +1,97 @@
+/** Theme colors **/
+
+:root {
+    --bg: #6D6875;
+    --text: white;
+    --heading: #E5989B;
+    --link: #FFB4A2;
+    --link-hover: #B5838D;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+
+/** Typography **/
+
+a:link,
+a:visited {
+    color: var(--link);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+a:active {
+    color: var(--text);
+}
+
+#site-title {
+    color: white;
+    text-decoration: none;
+}
+
+
+/** Layout **/
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
+}
+
+#site-title {
+    grid-column: 1;
+    list-style: none;
+}
+
+#nav {
+    grid-column: 2;
+    list-style: none;
+}
+
+#phone-number {
+    grid-column: 3;
+    color: white;
+}
+
+#youtube-embed,
+#local-video {
+    display: grid;
+}
+
+article {
+    display: grid;
+    place-items: center;
+}
+
+video {
+    width: 750px;
+    height: auto;
+}
+
+#gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    grid-auto-flow: dense;
+    grid-gap: 1em;
+    place-items: stretch;
+}
+
+#gallery-container img {
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: inherit;
+    height: auto;
+    image-orientation: from-image;
+    border-style: solid;
+    border-color: white;
+    border-width: 10px;
+    border-bottom-width: 30px;
+    border-radius: 5px;
+}

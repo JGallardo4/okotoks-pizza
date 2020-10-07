@@ -1,87 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Okotoks Pizza</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <header>
-        <a id="logo-container" >
+        <a id="logo-container">
             <!-- Create svg logo and include here -->
-        </a><!-- End of logo -->
+        </a>
+        <!-- End of logo -->
 
-        <a id="site-title"
-        href="index.html">
+        <a id="site-title" href="index.html">
             <h1>Okotoks Pizza</h1>
-        </a>        
+        </a>
 
-        <!-- Collapsible menu -->
-			<input id="checkbox" class="toggle" type="checkbox"><!-- Hidden -->
-			<label for="checkbox" class="toggle-label"></label>
+        <ul id="nav" role="navigation">
+            <a id="about" href="about.html" class="nav-item">
+                <li>About</li>
+            </a>
 
-			<ul id="nav" role="navigation">
-				<a id="about" 
-				href="about.html" 
-				class="nav-item">
-					<li>About</li>
-				</a>
+            <a id="food-menu" href="menu.html" class="nav-item">
+                <li>Pizza and Pasta</li>
+            </a>
 
-				<a id="food-menu" 
-				href="menu.html"
-				class="nav-item">
-					<li>Pizza and Pasta</li>
-				</a>
+            <a id="location" href="location.html" class="nav-item">
+                <li>Location and Hours of Operation</li>
+            </a>
+        </ul>
 
-				<a id="location" 
-				href="location.html"
-				class="nav-item">
-					<li>Location and Hours of Operation</li>
-				</a>	
-			</ul>
+        <a id="phone-number" href="tel:+18475555555">1-847-555-5555</a>
     </header>
 
     <main>
-      <article id="youtube-embed">
-        <h2>Embedded Youtube Video</h2>
+        <article id="youtube-embed" class="video-container">
+            <h2 class="section-title">Embedded Youtube Video</h2>
 
-        <iframe width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/SBCt70ABzEU" 
-        frameborder="0" 
-        allow=
-            "accelerometer; autoplay; 
+            <iframe width="750px" height="422px" src="https://www.youtube.com/embed/SBCt70ABzEU" frameborder="0" allow="accelerometer; autoplay; 
             clipboard-write; encrypted-media; 
-            gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>        
-      </article>
+            gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
 
-      <article id="local-video">
-        <h2>Local Video</h2>
+        <article id="local-video" class="video-container">
+            <h2 class="section-title">Local Video</h2>
 
-        <video controls width="250">        
-            <source src="media/okotoks.mp4"
-            type="video/mp4">
-        
-            Your browser doesn't support embedded videos.
-        </video>      
-      </article>
-      
-      <article id="photo-gallery">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hhs1.com%2Fwp-content%2Fuploads%2F2016%2F03%2Ffemale-chef-with-pizza.jpg&f=1&nofb=1"
-            alt="Chef with pizza">
+            <video controls>
+                <source src="media/okotoks.mp4" type="video/mp4">
 
-            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fblog.tupperware.com%2Fwp-content%2Fuploads%2F2016%2F12%2Fperfect-personal-pizza.jpg&f=1&nofb=1" 
-            alt="Pizza">
+                Your browser doesn't support embedded videos.
+            </video>
+        </article>
 
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fe6%2F92%2F7f%2Fe6927f6dec66ca6594a688d72a94c85d.jpg&f=1&nofb=1" 
-            alt="Pizza sign">
+        <article id="photo-gallery">
+            <h2 class="section-title">Photos</h2>
+            <div id="gallery-container">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hhs1.com%2Fwp-content%2Fuploads%2F2016%2F03%2Ffemale-chef-with-pizza.jpg&f=1&nofb=1" alt="Chef with pizza">
 
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F0a%2F0f%2F45%2F44%2Famazing-pizza-in-a-small.jpg&f=1&nofb=1" 
-            alt="Pizza place interior">
-      </article>
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fblog.tupperware.com%2Fwp-content%2Fuploads%2F2016%2F12%2Fperfect-personal-pizza.jpg&f=1&nofb=1" alt="Pizza">
+
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fe6%2F92%2F7f%2Fe6927f6dec66ca6594a688d72a94c85d.jpg&f=1&nofb=1" alt="Pizza sign">
+
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F0a%2F0f%2F45%2F44%2Famazing-pizza-in-a-small.jpg&f=1&nofb=1" alt="Pizza place interior">
+            </div>
+        </article>
     </main>
-  </body>
+</body>
+
 </html>
