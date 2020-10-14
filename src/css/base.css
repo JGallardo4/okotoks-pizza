@@ -1,6 +1,6 @@
 /** Theme colors **/
 
-:root {
+ :root {
     --bg: #6D6875;
     --text: white;
     --heading: #E5989B;
@@ -34,6 +34,10 @@ a:active {
     text-decoration: none;
 }
 
+#nav>a {
+    text-decoration: none;
+}
+
 
 /** Layout **/
 
@@ -58,7 +62,60 @@ header {
     list-style: none;
 }
 
+#nav li {
+    padding: 10px;
+}
+
 #phone-number {
-    grid-column: 4;
+    grid-column: 4i;
     color: white;
 }
+
+#social-media {
+    text-align: right;
+}
+
+
+/* Create collapsible menu for mobile */
+
+
+/* Hide checkbox */
+
+.toggle,
+.toggle-label {
+    display: none;
+}
+
+
+/* Active for widths up to the selected length */
+
+@media (max-width: 850px) {
+    #nav {
+        flex-direction: column;
+        padding-top: 1em;
+    }
+    .toggle-label {
+        display: block;
+    }
+    .toggle+.toggle-label::before {
+        content: "▼ Menu";
+    }
+    .toggle:checked+.toggle-label::before {
+        content: "▲ Menu";
+    }
+    .toggle~#nav {
+        display: none;
+    }
+    .toggle:checked~#nav {
+        grid-row: 2;
+        grid-column: 1 / 4;
+        display: flex;
+        text-align: center;
+    }
+    .toggle-label {
+        place-self: center;
+    }
+}
+
+
+/* End collapsible menu */
