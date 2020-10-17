@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 /** Theme colors **/
 
 :root {
@@ -16,6 +21,10 @@ body {
 
 /** Typography **/
 
+a {
+    text-decoration: none;
+}
+
 a:link,
 a:visited {
     color: var(--link);
@@ -23,18 +32,17 @@ a:visited {
 
 a:hover {
     color: var(--link-hover);
+    text-decoration: underline !important;
+    transition: 0.5s;
 }
 
 a:active {
     color: var(--text);
+    transition: 1s ease-in-out;
 }
 
 #site-title {
     color: white;
-    text-decoration: none;
-}
-
-#nav>a {
     text-decoration: none;
 }
 
@@ -136,3 +144,11 @@ header {
 
 
 /* End collapsible menu */
+
+
+/* Logo animation */
+
+#logo-container:hover {
+    background-color: white;
+    transition: all 0.4s ease;
+}
