@@ -110,6 +110,7 @@ header {
     padding: 1em;
     text-align: center;
     background-color: black;
+    transition: all 0.25s ease-out;
 }
 
 
@@ -129,13 +130,16 @@ header {
         content: "▲ Menu";
     }
     .toggle~#nav {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
     }
     .toggle:checked~#nav {
         grid-row: 3;
         grid-column: 1 / 5;
         display: flex;
         text-align: center;
+        max-height: 100vh;
+        transition: max-height .25s ease-in-out;
     }
     .toggle-label {
         place-self: center;
