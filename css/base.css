@@ -1,3 +1,10 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -49,6 +56,12 @@ a:active {
 
 /** Layout **/
 
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
 header {
     display: grid;
     grid-template-columns: auto auto 1fr auto;
@@ -89,6 +102,24 @@ header {
 
 #social-media {
     text-align: right;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+footer ul {
+    padding: 1rem;
+}
+
+footer ul a {
+    padding-left: 1rem;
+}
+
+footer ul a+a {
+    border-left: 2px solid black;
 }
 
 
