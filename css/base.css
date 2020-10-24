@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+ul {
+    list-style: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -19,6 +23,192 @@ html {
     --link: #FFB4A2;
     --link-hover: #B5838D;
 }
+
+
+/** Layout **/
+
+
+/** Common Layout */
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    display: grid;
+    grid-template-columns: min-content auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#logo-container {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0.5rem;
+}
+
+#logo-container,
+#logo-container img {
+    width: 100px;
+    height: auto;
+}
+
+#site-title {
+    grid-row: 1;
+    grid-column: 2 / 4;
+    place-self: center;
+    font-size: 1rem;
+}
+
+#nav {
+    grid-column: 1 / 4;
+    grid-row: 4;
+    list-style: none;
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav li {
+    padding: 10px;
+}
+
+#phone-number {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    color: white;
+    text-align: right;
+}
+
+#social-media {
+    text-align: right;
+}
+
+#footer-links {
+    gap: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+#footer-links a {
+    padding-left: 1rem;
+}
+
+#footer-links a+a {
+    border-left: 2px solid black;
+}
+
+
+/** Mobile Layout **/
+
+.toggle-label {
+    place-self: center;
+    width: 100%;
+    height: auto;
+    padding: 1em;
+    text-align: center;
+    background-color: black;
+}
+
+#nav {
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+
+#nav a {
+    border: none;
+    color: black;
+}
+
+
+/* Collapsible menu for mobile */
+
+.toggle,
+.toggle-label {
+    display: none;
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.toggle-label {
+    display: block;
+}
+
+.toggle+.toggle-label::before {
+    content: "▼ Menu";
+}
+
+.toggle:checked+.toggle-label::before {
+    content: "▲ Menu";
+}
+
+.toggle~#nav {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+}
+
+.toggle:checked~#nav {
+    text-align: center;
+    max-height: 100vh;
+}
+
+
+/* End collapsible menu */
+
+
+/** Tablet Layout **/
+
+@media only screen and (min-width: 768px) {
+    .toggle,
+    .toggle-label {
+        display: none;
+    }
+    #site-title {
+        grid-column: 2;
+        place-self: center;
+        font-size: 1rem;
+    }
+    #nav {
+        grid-row: 2;
+        grid-column: 1 / 4;
+        max-height: 100vh !important;
+        background-color: transparent;
+        width: max-content;
+        justify-self: center;
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    #nav a {
+        color: var(--heading);
+        padding-left: 1rem;
+    }
+    #nav a+a {
+        border-left: 2px solid black;
+    }
+    #phone-number {
+        grid-row: 3;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    #nav {
+        grid-row: 1;
+        grid-column: 3;
+    }
+}
+
+
+/** Desktop Layout **/
+
+
+/* Basic styles */
 
 body {
     background-color: var(--bg);
@@ -52,140 +242,6 @@ a:active {
     color: white;
     text-decoration: none;
 }
-
-
-/** Layout **/
-
-body {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
-
-header {
-    display: grid;
-    grid-template-columns: auto auto 1fr auto;
-    grid-template-rows: auto;
-}
-
-#logo-container {
-    grid-column: 1;
-    grid-row: 1;
-    padding: 10px;
-}
-
-#logo-container,
-#logo-container img {
-    width: 100px;
-    height: auto;
-}
-
-#site-title {
-    grid-column: 2;
-    place-self: center;
-}
-
-#nav {
-    grid-column: 3;
-    list-style: none;
-    padding: 0;
-    place-self: center;
-}
-
-#nav li {
-    padding: 10px;
-}
-
-#phone-number {
-    grid-column: 4i;
-    color: white;
-    text-align: right;
-}
-
-#social-media {
-    text-align: right;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.menu a {
-    padding-left: 1rem;
-}
-
-.menu a+a {
-    border-left: 2px solid black;
-}
-
-
-/* Create collapsible menu for mobile */
-
-
-/* Hide checkbox */
-
-.toggle,
-.toggle-label {
-    display: none;
-    grid-column: 1 / 5;
-    grid-row: 2;
-}
-
-.toggle-label {
-    width: 100%;
-    height: auto;
-    padding: 1em;
-    text-align: center;
-    background-color: black;
-    transition: all 0.25s ease-out;
-}
-
-
-/* Active for widths up to the selected length */
-
-@media (max-width: 850px) {
-    #nav {
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-    }
-    #nav a {
-        border: none;
-        padding: 0;
-        margin: 0;
-        color: black;
-    }
-    .toggle-label {
-        display: block;
-    }
-    .toggle+.toggle-label::before {
-        content: "▼ Menu";
-    }
-    .toggle:checked+.toggle-label::before {
-        content: "▲ Menu";
-    }
-    .toggle~#nav {
-        max-height: 0;
-        overflow: hidden;
-    }
-    .toggle:checked~#nav {
-        grid-row: 3;
-        grid-column: 1 / 5;
-        display: flex;
-        text-align: center;
-        max-height: 100vh;
-        transition: max-height .25s ease-in-out;
-    }
-    .toggle-label {
-        place-self: center;
-    }
-}
-
-
-/* End collapsible menu */
 
 
 /* Logo animation */
