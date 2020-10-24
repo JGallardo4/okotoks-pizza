@@ -82,12 +82,14 @@ header {
 
 #site-title {
     grid-column: 2;
+    place-self: center;
 }
 
 #nav {
     grid-column: 3;
     list-style: none;
     padding: 0;
+    place-self: center;
 }
 
 #nav li {
@@ -104,21 +106,18 @@ header {
     text-align: right;
 }
 
-footer ul {
+.menu {
     list-style: none;
     display: flex;
     gap: 1rem;
-}
-
-footer ul {
     padding: 1rem;
 }
 
-footer ul a {
+.menu a {
     padding-left: 1rem;
 }
 
-footer ul a+a {
+.menu a+a {
     border-left: 2px solid black;
 }
 
@@ -150,6 +149,14 @@ footer ul a+a {
 @media (max-width: 850px) {
     #nav {
         flex-direction: column;
+        background-color: white;
+        width: 100%;
+    }
+    #nav a {
+        border: none;
+        padding: 0;
+        margin: 0;
+        color: black;
     }
     .toggle-label {
         display: block;
