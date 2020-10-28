@@ -1,27 +1,7 @@
-/* Reset */
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-ul {
-    list-style: none;
-}
-
+@import '../colors',
+'../mixins';
 html {
     scroll-behavior: smooth;
-}
-
-
-/** Theme colors **/
-
-:root {
-    --bg: #6D6875;
-    --text: white;
-    --heading: #E5989B;
-    --link: #FFB4A2;
-    --link-hover: #B5838D;
 }
 
 
@@ -92,14 +72,12 @@ header {
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
-}
-
-#footer-links a {
-    padding-left: 0.5rem;
-}
-
-#footer-links a+a {
-    border-left: 2px solid black;
+    a {
+        padding-left: 0.5rem;
+        &+a {
+            border-left: 2px solid black;
+        }
+    }
 }
 
 
@@ -118,11 +96,10 @@ header {
     background-color: white;
     text-align: center;
     place-self: stretch;
-}
-
-#nav a {
-    border: none;
-    color: black;
+    a {
+        border: none;
+        color: black;
+    }
 }
 
 
@@ -139,24 +116,23 @@ header {
     display: block;
 }
 
-.toggle+.toggle-label::before {
-    content: "▼ Menu";
-}
-
-.toggle:checked+.toggle-label::before {
-    content: "▲ Menu";
-}
-
-.toggle~#nav {
-    max-height: 0;
-    padding: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease-in-out;
-}
-
-.toggle:checked~#nav {
-    text-align: center;
-    max-height: 100vh;
+.toggle {
+    &+.toggle-label::before {
+        content: "▼ Menu";
+    }
+    &:checked+.toggle-label::before {
+        content: "▲ Menu";
+    }
+    &~#nav {
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        @include nav-animation();
+    }
+    &:checked~#nav {
+        text-align: center;
+        max-height: 100vh;
+    }
 }
 
 
@@ -187,13 +163,13 @@ header {
         gap: 1rem;
         padding: 1rem;
         place-self: center;
-    }
-    #nav a {
-        color: var(--heading);
-        padding-left: 1rem;
-    }
-    #nav a+a {
-        border-left: 2px solid black;
+        a {
+            color: $heading;
+            padding-left: 1rem;
+            &+a {
+                border-left: 2px solid black;
+            }
+        }
     }
     #phone-number {
         grid-row: 3;
@@ -202,11 +178,14 @@ header {
         font-size: 1rem;
         padding: 1rem;
         gap: 1rem;
-    }
-    #footer-links a {
-        padding-left: 1rem;
+        a {
+            padding-left: 1rem;
+        }
     }
 }
+
+
+/** Desktop Layout **/
 
 @media only screen and (min-width: 1000px) {
     #nav {
@@ -216,14 +195,11 @@ header {
 }
 
 
-/** Desktop Layout **/
-
-
 /* Basic styles */
 
 body {
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: $bg;
+    color: $text;
 }
 
 
@@ -231,22 +207,19 @@ body {
 
 a {
     text-decoration: none;
-}
-
-a:link,
-a:visited {
-    color: var(--link);
-}
-
-a:hover {
-    color: var(--link-hover);
-    text-decoration: underline !important;
-    transition: 0.5s;
-}
-
-a:active {
-    color: var(--text);
-    transition: 1s ease-in-out;
+    &:link,
+    &:visited {
+        color: $link;
+    }
+    &:hover {
+        color: $link-hover;
+        text-decoration: underline !important;
+        transition: 0.5s;
+    }
+    &:active {
+        color: $text;
+        transition: 1s ease-in-out;
+    }
 }
 
 #site-title {

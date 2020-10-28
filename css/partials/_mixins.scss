@@ -1,0 +1,16 @@
+@mixin image-fade-in() {
+    /* Fade images in */
+    animation: fadeIn ease 5s;
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin nav-animation() {
+    transition: max-height 0.25s ease-in-out;
+}
