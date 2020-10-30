@@ -13,9 +13,7 @@ body {
 }
 
 header {
-    display: grid;
-    grid-template-columns: min-content auto auto;
-    grid-template-rows: auto auto auto;
+    grid-row: 1;
 }
 
 #logo-container {
@@ -45,7 +43,23 @@ header {
 }
 
 #phone-number {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    &::before {
+        content: '\2001\2001';
+        border-radius: 50% 0 0 50%;
+    }
+    &::before,
+    &>* {
+        text-align: right;
+        width: fit-content;
+        background-color: $dblue;
+        color: white !important;
+    }
+    a {
+        padding: 0.5rem;
+        padding-left: 0;
+    }
 }
 
 #social-media {
@@ -63,28 +77,6 @@ header {
         &+a {
             border-left: 2px solid black;
         }
-    }
-}
-
-
-/** Mobile Layout **/
-
-.toggle-label {
-    place-self: stretch;
-    width: inherit;
-    height: auto;
-    padding: 1em;
-    text-align: center;
-    background-color: black;
-}
-
-#nav {
-    background-color: white;
-    text-align: center;
-    place-self: stretch;
-    a {
-        border: none;
-        color: black;
     }
 }
 
@@ -159,6 +151,7 @@ header {
 
 a:not(#site-title) {
     text-decoration: none;
+    transition: 0.5s ease;
     &:link,
     &:visited {
         color: $link;
@@ -166,11 +159,9 @@ a:not(#site-title) {
     &:hover {
         color: $link-hover;
         text-decoration: underline !important;
-        transition: 0.5s;
     }
     &:active {
         color: $text;
-        transition: 1s ease-in-out;
     }
 }
 

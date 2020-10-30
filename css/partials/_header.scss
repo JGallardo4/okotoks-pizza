@@ -1,7 +1,10 @@
 @import 'colors';
 header {
+    display: grid;
+    grid-template-columns: min-content auto auto;
     background-color: $main-color;
-    color: white !important;
+    box-shadow: 0 0 .8125rem 0 rgba(0, 0, 0, .75);
+    margin-bottom: 1rem;
 }
 
 #logo-container,
@@ -9,10 +12,35 @@ header {
     width: 5rem;
     height: auto;
     padding-left: 3px;
+    padding-right: 10px;
 }
 
 #site-title {
     text-align: center;
+    color: white;
+}
+
+
+/** Mobile Layout **/
+
+.toggle-label {
+    place-self: stretch;
+    width: inherit;
+    height: auto;
+    padding: 1em;
+    text-align: center;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#nav {
+    background-color: white;
+    text-align: center;
+    place-self: stretch;
+    a {
+        border: none;
+    }
 }
 
 
@@ -49,12 +77,4 @@ header {
             padding-left: 1rem;
         }
     }
-}
-
-
-/* Logo animation */
-
-#logo-container:hover {
-    background-color: white;
-    transition: all 0.4s ease;
 }

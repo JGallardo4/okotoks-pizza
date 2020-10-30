@@ -53,13 +53,8 @@ body {
 }
 
 header {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: min-content auto auto;
-      grid-template-columns: -webkit-min-content auto auto;
-      grid-template-columns: min-content auto auto;
-  -ms-grid-rows: auto auto auto;
-      grid-template-rows: auto auto auto;
+  -ms-grid-row: 1;
+  grid-row: 1;
 }
 
 #logo-container {
@@ -102,7 +97,32 @@ header {
 }
 
 #phone-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#phone-number::before {
+  content: '\2001\2001';
+  border-radius: 50% 0 0 50%;
+}
+
+#phone-number::before,
+#phone-number > * {
   text-align: right;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #3b6575ff;
+  color: white !important;
+}
+
+#phone-number a {
+  padding: 0.5rem;
+  padding-left: 0;
 }
 
 #social-media {
@@ -128,27 +148,6 @@ header {
 
 #footer-links a + a {
   border-left: 2px solid black;
-}
-
-/** Mobile Layout **/
-.toggle-label {
-  place-self: stretch;
-  width: inherit;
-  height: auto;
-  padding: 1em;
-  text-align: center;
-  background-color: black;
-}
-
-#nav {
-  background-color: white;
-  text-align: center;
-  place-self: stretch;
-}
-
-#nav a {
-  border: none;
-  color: black;
 }
 
 /* Collapsible menu for mobile */
@@ -224,6 +223,8 @@ header {
 /** Link styles **/
 a:not(#site-title) {
   text-decoration: none;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 a:not(#site-title):link, a:not(#site-title):visited {
@@ -233,14 +234,10 @@ a:not(#site-title):link, a:not(#site-title):visited {
 a:not(#site-title):hover {
   color: #d20000ff;
   text-decoration: underline !important;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
 a:not(#site-title):active {
   color: #f3d6adff;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
 }
 
 /* Other styles */
@@ -257,8 +254,15 @@ body {
 }
 
 header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content auto auto;
+      grid-template-columns: -webkit-min-content auto auto;
+      grid-template-columns: min-content auto auto;
   background-color: #408852;
-  color: white !important;
+  -webkit-box-shadow: 0 0 0.8125rem 0 rgba(0, 0, 0, 0.75);
+          box-shadow: 0 0 0.8125rem 0 rgba(0, 0, 0, 0.75);
+  margin-bottom: 1rem;
 }
 
 #logo-container,
@@ -266,10 +270,34 @@ header {
   width: 5rem;
   height: auto;
   padding-left: 3px;
+  padding-right: 10px;
 }
 
 #site-title {
   text-align: center;
+  color: white;
+}
+
+/** Mobile Layout **/
+.toggle-label {
+  place-self: stretch;
+  width: inherit;
+  height: auto;
+  padding: 1em;
+  text-align: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#nav {
+  background-color: white;
+  text-align: center;
+  place-self: stretch;
+}
+
+#nav a {
+  border: none;
 }
 
 /** Tablet Layout **/
@@ -310,13 +338,6 @@ header {
   #footer-links a {
     padding-left: 1rem;
   }
-}
-
-/* Logo animation */
-#logo-container:hover {
-  background-color: white;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
 }
 
 /** Home **/
