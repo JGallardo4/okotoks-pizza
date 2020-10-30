@@ -1,5 +1,28 @@
-$bg: #6D6875;
-$text: white;
-$heading: #E5989B;
-$link: #FFB4A2;
-$link-hover: #B5838D;
+/* Theme colors */
+
+$black: #000000ff;
+$green: #408852;
+$grena: #304836ff;
+$dblue: #3b6575ff;
+$darkr: #d20000ff;
+$wheat: #f3d6adff;
+
+/* Color codes */
+
+$text: $wheat;
+$heading: $darkr;
+
+/**/
+
+$bg: white;
+$main-color: $green;
+$main-alt: $grena;
+$accent1: $darkr;
+$link: $grena;
+$link-hover: $accent1;
+
+/**/
+
+body {
+    background-color: $bg;
+}

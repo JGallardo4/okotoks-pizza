@@ -1,5 +1,20 @@
 /* Reset */
 
+a {
+    text-decoration: none;
+    &:link,
+    &:visited {
+        color: unset;
+    }
+    &:hover {
+        color: unset;
+        text-decoration: none;
+    }
+    &:active {
+        color: unset;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;

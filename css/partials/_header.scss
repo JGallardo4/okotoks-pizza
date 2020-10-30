@@ -1,0 +1,60 @@
+@import 'colors';
+header {
+    background-color: $main-color;
+    color: white !important;
+}
+
+#logo-container,
+#logo-container img {
+    width: 5rem;
+    height: auto;
+    padding-left: 3px;
+}
+
+#site-title {
+    text-align: center;
+}
+
+
+/** Tablet Layout **/
+
+@media only screen and (min-width: 768px) {
+    #site-title {
+        place-self: center;
+        font-size: 1.5rem;
+    }
+    #nav {
+        max-height: 100vh !important;
+        background-color: transparent;
+        width: max-content;
+        justify-self: center;
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+        padding: 1rem;
+        place-self: center;
+        a {
+            color: white !important;
+            padding-left: 1rem;
+            &+a {
+                border-left: 2px solid black;
+            }
+        }
+    }
+    #footer-links {
+        font-size: 1rem;
+        padding: 1rem;
+        gap: 1rem;
+        a {
+            padding-left: 1rem;
+        }
+    }
+}
+
+
+/* Logo animation */
+
+#logo-container:hover {
+    background-color: white;
+    transition: all 0.4s ease;
+}
