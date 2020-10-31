@@ -40,17 +40,8 @@ header {
     width: inherit;
 }
 
-#nav li {
-    padding: 10px;
-}
-
 main {
-    padding: 0 1rem;
-    position: relative;
-    #phone-number {
-        position: absolute;
-        right: 0;
-    }
+    padding: 0 5px;
 }
 
 #phone-number {
@@ -76,6 +67,11 @@ main {
 
 #social-media {
     text-align: right;
+}
+
+.page-title {
+    @include uiFont();
+    color: $main-alt;
 }
 
 #footer-links {
@@ -110,6 +106,14 @@ main {
     #phone-number {
         grid-row: 3;
     }
+    main {
+        padding: 0 1rem;
+        position: relative;
+        #phone-number {
+            position: absolute;
+            right: 0;
+        }
+    }
 }
 
 
@@ -123,25 +127,6 @@ main {
     #nav {
         grid-row: 1;
         grid-column: 3;
-    }
-}
-
-
-/** Link styles **/
-
-a:not(#site-title) {
-    text-decoration: none;
-    transition: 0.5s ease;
-    &:link,
-    &:visited {
-        color: $link;
-    }
-    &:hover {
-        color: $link-hover;
-        text-decoration: underline !important;
-    }
-    &:active {
-        color: $text;
     }
 }
 

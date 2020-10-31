@@ -3,15 +3,11 @@
 a {
     text-decoration: none;
     &:link,
-    &:visited {
-        color: unset;
-    }
+    &:visited,
+    &:hover,
+    &:active,
     &:hover {
-        color: unset;
         text-decoration: none;
-    }
-    &:active {
-        color: unset;
     }
 }
 

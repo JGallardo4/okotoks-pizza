@@ -1,0 +1,53 @@
+@import '../fonts',
+'../colors',
+'../breakpoints';
+
+/**/
+
+.page-title {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    @include titleFont();
+}
+
+.menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($max-menu-item, 1fr));
+    gap: 2vw;
+    @include editorialFont();
+    .menu-item {
+        padding-bottom: 1.8rem;
+    }
+    .menu-item_title {
+        color: $main-color;
+        font-size: 1.6rem;
+        font-weight: 800;
+        padding-bottom: 0.5rem;
+    }
+    .menu-item_description {
+        font-size: 1.5rem;
+        font-weight: lighter;
+        padding-bottom: 1rem;
+    }
+}
+
+.menu-item_prices {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    &>li:not(:first-of-type) {
+        padding-left: 1rem;
+    }
+}
+
+
+/** Desktop Layout **/
+
+@media only screen and (min-width: $min-desktop) {
+    .menu-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}

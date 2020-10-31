@@ -4,11 +4,11 @@
 /**/
 /**/
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap");
 body {
   background-color: white;
 }
@@ -18,17 +18,8 @@ a {
   text-decoration: none;
 }
 
-a:link, a:visited {
-  color: unset;
-}
-
-a:hover {
-  color: unset;
+a:link, a:visited, a:hover, a:active, a:hover {
   text-decoration: none;
-}
-
-a:active {
-  color: unset;
 }
 
 * {
@@ -98,18 +89,8 @@ header {
   width: inherit;
 }
 
-#nav li {
-  padding: 10px;
-}
-
 main {
-  padding: 0 1rem;
-  position: relative;
-}
-
-main #phone-number {
-  position: absolute;
-  right: 0;
+  padding: 0 5px;
 }
 
 #phone-number {
@@ -122,6 +103,8 @@ main #phone-number {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
 }
 
 #phone-number::before {
@@ -135,7 +118,7 @@ main #phone-number {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-color: #3b6575ff;
+  background-color: #3b6575;
   color: white !important;
 }
 
@@ -146,6 +129,15 @@ main #phone-number {
 
 #social-media {
   text-align: right;
+}
+
+.page-title {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
+  color: #304836;
 }
 
 #footer-links {
@@ -190,6 +182,14 @@ main #phone-number {
     -ms-grid-row: 3;
     grid-row: 3;
   }
+  main {
+    padding: 0 1rem;
+    position: relative;
+  }
+  main #phone-number {
+    position: absolute;
+    right: 0;
+  }
 }
 
 /** Desktop Layout **/
@@ -206,26 +206,6 @@ main #phone-number {
     -ms-grid-column: 3;
     grid-column: 3;
   }
-}
-
-/** Link styles **/
-a:not(#site-title) {
-  text-decoration: none;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
-a:not(#site-title):link, a:not(#site-title):visited {
-  color: #304836ff;
-}
-
-a:not(#site-title):hover {
-  color: #d20000ff;
-  text-decoration: underline !important;
-}
-
-a:not(#site-title):active {
-  color: #f3d6adff;
 }
 
 /* Other styles */
@@ -269,16 +249,28 @@ header {
       -ms-grid-row-align: center;
       align-self: center;
   text-align: left;
-  color: white;
   font-family: "Bebas Neue", cursive;
   text-transform: uppercase;
   font-weight: bold;
+  font-style: normal;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+#site-title:link, #site-title:visited, #site-title:hover, #site-title:active {
+  color: white;
+}
+
+#site-title:hover {
+  color: #304836 !important;
 }
 
 #nav {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal;
 }
 
 /** Mobile Layout **/
@@ -338,8 +330,9 @@ header {
 /** Tablet Layout **/
 @media only screen and (min-width: 768px) {
   #nav {
-    font-size: 0.8rem;
+    font-size: 0.90rem;
     max-height: 100vh !important;
+    height: 2.5rem;
     background-color: transparent;
     width: -webkit-max-content;
     width: -moz-max-content;
@@ -352,7 +345,9 @@ header {
             flex-direction: row;
     text-align: left;
     gap: 1rem;
-    padding: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     place-self: center;
     -webkit-animation: none;
             animation: none;
@@ -360,9 +355,20 @@ header {
   #nav a {
     color: white !important;
     padding-left: 1rem;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
   }
   #nav a + a {
     border-left: 2px solid black;
+  }
+  #nav a:link, #nav a:visited {
+    color: #304836;
+  }
+  #nav a:hover {
+    color: #304836 !important;
+  }
+  #nav a:active {
+    color: #f3d6ad;
   }
   #footer-links {
     font-size: 1rem;
@@ -378,6 +384,7 @@ header {
 @media only screen and (min-width: 1130px) {
   #nav {
     font-size: 1rem;
+    border: 0;
   }
 }
 
@@ -451,6 +458,79 @@ video {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Theme colors */
+/* Color codes */
+/**/
+/**/
+body {
+  background-color: white;
+}
+
+/**/
+.page-title {
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  font-family: "Bebas Neue", cursive;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.menu-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(375px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+  gap: 2vw;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.05rem;
+  line-height: 2rem;
+}
+
+.menu-section .menu-item {
+  padding-bottom: 1.8rem;
+}
+
+.menu-section .menu-item_title {
+  color: #408852;
+  font-size: 1.6rem;
+  font-weight: 800;
+  padding-bottom: 0.5rem;
+}
+
+.menu-section .menu-item_description {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  padding-bottom: 1rem;
+}
+
+.menu-item_prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.menu-item_prices > li:not(:first-of-type) {
+  padding-left: 1rem;
+}
+
+/** Desktop Layout **/
+@media only screen and (min-width: 1130px) {
+  .menu-section {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 /*# sourceMappingURL=main.css.map */

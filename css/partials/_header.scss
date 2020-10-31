@@ -22,8 +22,17 @@ header {
     justify-self: left;
     align-self: center;
     text-align: left;
-    color: white;
     @include titleFont();
+    transition: 0.2s ease;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: white;
+    }
+    &:hover {
+        color: $main-alt !important;
+    }
 }
 
 #nav {
@@ -89,15 +98,16 @@ header {
 
 @media only screen and (min-width: $min-tablet) {
     #nav {
-        font-size: 0.8rem;
+        font-size: 0.90rem;
         max-height: 100vh !important;
+        height: 2.5rem;
         background-color: transparent;
         width: max-content;
         justify-self: center;
         flex-direction: row;
         text-align: left;
         gap: 1rem;
-        padding: 1rem;
+        align-items: center;
         place-self: center;
         animation: none;
         a {
@@ -105,6 +115,17 @@ header {
             padding-left: 1rem;
             &+a {
                 border-left: 2px solid black;
+            }
+            transition: 0.2s ease;
+            &:link,
+            &:visited {
+                color: $link;
+            }
+            &:hover {
+                color: $main-alt !important;
+            }
+            &:active {
+                color: $text;
             }
         }
     }
@@ -124,5 +145,6 @@ header {
 @media only screen and (min-width: $min-desktop) {
     #nav {
         font-size: 1rem;
+        border: 0;
     }
 }
