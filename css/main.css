@@ -6,6 +6,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 body {
   background-color: white;
 }
@@ -99,6 +102,16 @@ header {
   padding: 10px;
 }
 
+main {
+  padding: 0 1rem;
+  position: relative;
+}
+
+main #phone-number {
+  position: absolute;
+  right: 0;
+}
+
 #phone-number {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -106,6 +119,9 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
 }
 
 #phone-number::before {
@@ -365,7 +381,15 @@ header {
   }
 }
 
-/** Home **/
+/* Theme colors */
+/* Color codes */
+/**/
+/**/
+body {
+  background-color: white;
+}
+
+/** About **/
 /** Layout **/
 #youtube-embed,
 #local-video {
@@ -403,7 +427,7 @@ video {
   height: auto;
   image-orientation: from-image;
   border-style: solid;
-  border-color: white;
+  border-color: #408852;
   border-width: 10px;
   border-bottom-width: 30px;
   border-radius: 5px;
