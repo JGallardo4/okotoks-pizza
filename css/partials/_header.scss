@@ -1,7 +1,9 @@
-@import 'colors';
+@import 'colors',
+'fonts',
+'breakpoints';
 header {
     display: grid;
-    grid-template-columns: min-content auto auto;
+    grid-template-columns: min-content max-content auto;
     background-color: $main-color;
     box-shadow: 0 0 .8125rem 0 rgba(0, 0, 0, .75);
     margin-bottom: 1rem;
@@ -16,8 +18,16 @@ header {
 }
 
 #site-title {
-    text-align: center;
+    font-size: 1.5rem;
+    justify-self: left;
+    align-self: center;
+    text-align: left;
     color: white;
+    @include titleFont();
+}
+
+#nav {
+    @include uiFont();
 }
 
 
@@ -44,14 +54,42 @@ header {
 }
 
 
+/* Collapsible menu for mobile */
+
+.toggle,
+.toggle-label {
+    grid-column: 1 / 4;
+    grid-row: 3;
+}
+
+.toggle {
+    &+.toggle-label::before {
+        content: "▼ Menu";
+    }
+    &:checked+.toggle-label::before {
+        content: "▲ Menu";
+    }
+    &~#nav {
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        @include navAnimation();
+    }
+    &:checked~#nav {
+        text-align: center;
+        max-height: 100vh;
+    }
+}
+
+
+/* End collapsible menu */
+
+
 /** Tablet Layout **/
 
-@media only screen and (min-width: 768px) {
-    #site-title {
-        place-self: center;
-        font-size: 1.5rem;
-    }
+@media only screen and (min-width: $min-tablet) {
     #nav {
+        font-size: 0.8rem;
         max-height: 100vh !important;
         background-color: transparent;
         width: max-content;
@@ -61,6 +99,7 @@ header {
         gap: 1rem;
         padding: 1rem;
         place-self: center;
+        animation: none;
         a {
             color: white !important;
             padding-left: 1rem;
@@ -76,5 +115,14 @@ header {
         a {
             padding-left: 1rem;
         }
+    }
+}
+
+
+/** Desktop Layout **/
+
+@media only screen and (min-width: $min-desktop) {
+    #nav {
+        font-size: 1rem;
     }
 }

@@ -38,6 +38,6 @@ video {
         border-width: 10px;
         border-bottom-width: 30px;
         border-radius: 5px;
-        @include image-fade-in();
+        @include imageFadeIn();
     }
 }

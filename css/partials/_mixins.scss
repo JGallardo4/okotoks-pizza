@@ -1,4 +1,4 @@
-@mixin image-fade-in() {
+@mixin imageFadeIn() {
     /* Fade images in */
     animation: fadeIn ease 5s;
     @keyframes fadeIn {
@@ -11,6 +11,6 @@
     }
 }
 
-@mixin nav-animation() {
+@mixin navAnimation() {
     transition: max-height 0.25s ease-in-out;
 }

@@ -1,5 +1,6 @@
 @import '../colors',
-'../mixins';
+'../mixins',
+'../fonts' '../breakpoints';
 
 /** Layout **/
 
@@ -45,6 +46,7 @@ header {
 #phone-number {
     display: flex;
     justify-content: flex-end;
+    @include uiFont();
     &::before {
         content: '\2001\2001';
         border-radius: 50% 0 0 50%;
@@ -81,45 +83,9 @@ header {
 }
 
 
-/* Collapsible menu for mobile */
-
-.toggle,
-.toggle-label {
-    display: none;
-    grid-column: 1 / 4;
-    grid-row: 3;
-}
-
-.toggle-label {
-    display: block;
-}
-
-.toggle {
-    &+.toggle-label::before {
-        content: "▼ Menu";
-    }
-    &:checked+.toggle-label::before {
-        content: "▲ Menu";
-    }
-    &~#nav {
-        max-height: 0;
-        padding: 0;
-        overflow: hidden;
-        @include nav-animation();
-    }
-    &:checked~#nav {
-        text-align: center;
-        max-height: 100vh;
-    }
-}
-
-
-/* End collapsible menu */
-
-
 /** Tablet Layout **/
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $min-tablet) {
     .toggle,
     .toggle-label {
         display: none;
@@ -139,7 +105,11 @@ header {
 
 /** Desktop Layout **/
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: $min-desktop) {
+    #site-title {
+        grid-row: 1;
+        grid-column: 2;
+    }
     #nav {
         grid-row: 1;
         grid-column: 3;

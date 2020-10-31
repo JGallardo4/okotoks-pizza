@@ -3,6 +3,9 @@
 /* Color codes */
 /**/
 /**/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 body {
   background-color: white;
 }
@@ -150,43 +153,6 @@ header {
   border-left: 2px solid black;
 }
 
-/* Collapsible menu for mobile */
-.toggle,
-.toggle-label {
-  display: none;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / 4;
-  -ms-grid-row: 3;
-  grid-row: 3;
-}
-
-.toggle-label {
-  display: block;
-}
-
-.toggle + .toggle-label::before {
-  content: "▼ Menu";
-}
-
-.toggle:checked + .toggle-label::before {
-  content: "▲ Menu";
-}
-
-.toggle ~ #nav {
-  max-height: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.25s ease-in-out;
-  transition: max-height 0.25s ease-in-out;
-}
-
-.toggle:checked ~ #nav {
-  text-align: center;
-  max-height: 100vh;
-}
-
-/* End collapsible menu */
 /** Tablet Layout **/
 @media only screen and (min-width: 768px) {
   .toggle,
@@ -211,7 +177,13 @@ header {
 }
 
 /** Desktop Layout **/
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1130px) {
+  #site-title {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
   #nav {
     -ms-grid-row: 1;
     grid-row: 1;
@@ -256,9 +228,9 @@ body {
 header {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: min-content auto auto;
-      grid-template-columns: -webkit-min-content auto auto;
-      grid-template-columns: min-content auto auto;
+  -ms-grid-columns: min-content max-content auto;
+      grid-template-columns: -webkit-min-content -webkit-max-content auto;
+      grid-template-columns: min-content max-content auto;
   background-color: #408852;
   -webkit-box-shadow: 0 0 0.8125rem 0 rgba(0, 0, 0, 0.75);
           box-shadow: 0 0 0.8125rem 0 rgba(0, 0, 0, 0.75);
@@ -274,8 +246,23 @@ header {
 }
 
 #site-title {
-  text-align: center;
+  font-size: 1.5rem;
+  -ms-grid-column-align: left;
+      justify-self: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: left;
   color: white;
+  font-family: "Bebas Neue", cursive;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#nav {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
 }
 
 /** Mobile Layout **/
@@ -300,13 +287,42 @@ header {
   border: none;
 }
 
+/* Collapsible menu for mobile */
+.toggle,
+.toggle-label {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.toggle + .toggle-label::before {
+  content: "▼ Menu";
+}
+
+.toggle:checked + .toggle-label::before {
+  content: "▲ Menu";
+}
+
+.toggle ~ #nav {
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.25s ease-in-out;
+  transition: max-height 0.25s ease-in-out;
+}
+
+.toggle:checked ~ #nav {
+  text-align: center;
+  max-height: 100vh;
+}
+
+/* End collapsible menu */
 /** Tablet Layout **/
 @media only screen and (min-width: 768px) {
-  #site-title {
-    place-self: center;
-    font-size: 1.5rem;
-  }
   #nav {
+    font-size: 0.8rem;
     max-height: 100vh !important;
     background-color: transparent;
     width: -webkit-max-content;
@@ -322,6 +338,8 @@ header {
     gap: 1rem;
     padding: 1rem;
     place-self: center;
+    -webkit-animation: none;
+            animation: none;
   }
   #nav a {
     color: white !important;
@@ -337,6 +355,13 @@ header {
   }
   #footer-links a {
     padding-left: 1rem;
+  }
+}
+
+/** Desktop Layout **/
+@media only screen and (min-width: 1130px) {
+  #nav {
+    font-size: 1rem;
   }
 }
 

@@ -1,0 +1,26 @@
+// Bebas Neue Regular 400
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+// Montserrat Medium 500
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+// Montserrat Regular 400
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+$title-font: 'Bebas Neue',
+cursive;
+$ui-font: 'Montserrat',
+sans-serif;
+@mixin titleFont() {
+    font-family: $title-font;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@mixin uiFont() {
+    font-family: $ui-font;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+@mixin editorialFont {
+    font-family: $title-font;
+    font-weight: normal;
+}
