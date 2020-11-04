@@ -91,6 +91,14 @@ header {
 
 main {
   padding: 0 5px;
+  position: relative;
+}
+
+main #phone-number {
+  -ms-grid-row: 3;
+  grid-row: 3;
+  position: absolute;
+  right: 0;
 }
 
 #phone-number {
@@ -178,15 +186,16 @@ main {
     -ms-grid-column-span: 3;
     grid-column: 1 / 4;
   }
-  #phone-number {
-    -ms-grid-row: 3;
-    grid-row: 3;
+  a[href^="tel:"] {
+    pointer-events: none;
   }
   main {
     padding: 0 1rem;
     position: relative;
   }
   main #phone-number {
+    -ms-grid-row: 3;
+    grid-row: 3;
     position: absolute;
     right: 0;
   }
