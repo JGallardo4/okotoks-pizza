@@ -42,11 +42,13 @@ header {
 
 main {
     padding: 0 5px;
+    padding-top: 3rem;
     position: relative;
     #phone-number {
         grid-row: 3;
         position: absolute;
         right: 0;
+        top: 0;
     }
 }
 
@@ -114,12 +116,7 @@ main {
     }
     main {
         padding: 0 1rem;
-        position: relative;
-        #phone-number {
-            grid-row: 3;
-            position: absolute;
-            right: 0;
-        }
+        padding-top: 3rem;
     }
 }
 

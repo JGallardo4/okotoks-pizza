@@ -91,6 +91,7 @@ header {
 
 main {
   padding: 0 5px;
+  padding-top: 3rem;
   position: relative;
 }
 
@@ -99,6 +100,7 @@ main #phone-number {
   grid-row: 3;
   position: absolute;
   right: 0;
+  top: 0;
 }
 
 #phone-number {
@@ -191,13 +193,7 @@ main #phone-number {
   }
   main {
     padding: 0 1rem;
-    position: relative;
-  }
-  main #phone-number {
-    -ms-grid-row: 3;
-    grid-row: 3;
-    position: absolute;
-    right: 0;
+    padding-top: 3rem;
   }
 }
 
@@ -253,7 +249,11 @@ header {
 
 #site-title {
   font-size: 1.5rem;
-  place-self: stretch;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-align: left;
   font-family: "Bebas Neue", cursive;
   text-transform: uppercase;
