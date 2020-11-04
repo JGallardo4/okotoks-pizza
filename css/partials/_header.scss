@@ -3,10 +3,11 @@
 'breakpoints';
 header {
     display: grid;
-    grid-template-columns: min-content max-content auto;
+    grid-template-columns: min-content max-content 1fr;
     background-color: $main-color;
     box-shadow: 0 0 .8125rem 0 rgba(0, 0, 0, .75);
     margin-bottom: 1rem;
+    max-width: 100vw !important;
 }
 
 #logo-container,
@@ -19,8 +20,7 @@ header {
 
 #site-title {
     font-size: 1.5rem;
-    justify-self: left;
-    align-self: center;
+    place-self: stretch;
     text-align: left;
     @include titleFont();
     transition: 0.2s ease;
@@ -43,9 +43,6 @@ header {
 /** Mobile Layout **/
 
 .toggle-label {
-    place-self: stretch;
-    width: inherit;
-    height: auto;
     padding: 1em;
     text-align: center;
     background-color: black;
