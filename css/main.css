@@ -606,6 +606,12 @@ body {
   padding-left: 1rem;
 }
 
+.menu-item_prices_price {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
 /** Desktop Layout **/
 @media only screen and (min-width: 1130px) {
   .menu-section {
