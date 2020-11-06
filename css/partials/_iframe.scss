@@ -1,4 +1,4 @@
-@mixin bottom-pad($iframe-width, $iframe-height) {
+@mixin bottomPad($iframe-width, $iframe-height) {
     $iframe-padding: ($iframe-height / $iframe-width) * 100%;
     position: relative;
     width: 100%;
