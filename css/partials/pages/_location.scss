@@ -1,0 +1,48 @@
+@import '../iframe';
+
+/*Hours*/
+
+#hours {
+    max-width: 25rem;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.hours_section {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/** Tablet+ Layout **/
+
+@media only screen and (min-width: $min-tablet) {
+    #hours {
+        //width: 50vw;
+    }
+}
+
+
+/*Map*/
+
+.iframe-container {
+    @include bottom-pad(1, 1);
+}
+
+
+/** Tablet Layout **/
+
+@media only screen and (min-width: $min-tablet) {
+    .iframe-container {
+        @include bottom-pad(2.5, 1);
+    }
+}
+
+
+/** Desktop Layout **/
+
+@media only screen and (min-width: $min-desktop) {
+    .iframe-container {
+        @include bottom-pad(3, 1);
+    }
+}

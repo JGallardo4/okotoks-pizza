@@ -1,24 +1,18 @@
 @import '../mixins',
-'../colors';
+'../colors',
+'../iframe';
 
 /** About **/
 
 
 /** Layout **/
 
-#youtube-embed,
-#local-video {
+#youtube-embed {
     display: grid;
 }
 
-article {
-    display: grid;
-    place-items: center;
-}
-
-video {
-    width: 750px;
-    height: auto;
+.video-container {
+    @include bottom-pad(379, 994.1);
 }
 
 #gallery-container {
