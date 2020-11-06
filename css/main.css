@@ -410,7 +410,7 @@ body {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 262.29551%;
+  padding-bottom: 38.12494%;
 }
 
 .video-container object,
@@ -485,7 +485,6 @@ body {
           justify-content: space-between;
 }
 
-/** Tablet+ Layout **/
 /*Map*/
 .iframe-container {
   position: relative;
