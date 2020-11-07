@@ -40,18 +40,6 @@ header {
     width: inherit;
 }
 
-main {
-    padding: 0 5px;
-    padding-top: 3rem;
-    position: relative;
-    #phone-number {
-        grid-row: 3;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-}
-
 #phone-number {
     display: flex;
     justify-content: flex-end;
@@ -97,12 +85,9 @@ main {
         grid-row: 2;
         grid-column: 1 / 4;
     }
+    // Turn phone link into regular text
     a[href^="tel:"] {
         pointer-events: none;
-    }
-    main {
-        padding: 0 1rem;
-        padding-top: 3rem;
     }
 }
 
@@ -119,6 +104,11 @@ main {
         grid-column: 3;
     }
 }
+
+
+/** Ultra wide layout **/
+
+@media only screen and (min-width: $min-desktop) {}
 
 
 /* Other styles */

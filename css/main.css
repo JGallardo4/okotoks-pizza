@@ -94,20 +94,6 @@ header {
   width: inherit;
 }
 
-main {
-  padding: 0 5px;
-  padding-top: 3rem;
-  position: relative;
-}
-
-main #phone-number {
-  -ms-grid-row: 3;
-  grid-row: 3;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
 #phone-number {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,10 +161,6 @@ main #phone-number {
   a[href^="tel:"] {
     pointer-events: none;
   }
-  main {
-    padding: 0 1rem;
-    padding-top: 3rem;
-  }
 }
 
 /** Desktop Layout **/
@@ -197,6 +179,7 @@ main #phone-number {
   }
 }
 
+/** Ultra wide layout **/
 /* Other styles */
 html {
   scroll-behavior: smooth;
@@ -447,11 +430,20 @@ body {
   }
 }
 
+/* Layout */
+#location-main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+  gap: 2rem;
+}
+
 /*Hours*/
 #hours {
+  place-self: center;
   max-width: 25rem;
   margin: 0 auto;
-  padding-bottom: 2rem;
 }
 
 .hours_section {
@@ -464,6 +456,12 @@ body {
 }
 
 /*Map*/
+#maps-embed {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
 .iframe-container {
   position: relative;
   width: 100%;
