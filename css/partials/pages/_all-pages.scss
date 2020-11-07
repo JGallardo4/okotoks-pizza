@@ -2,6 +2,10 @@
 '../mixins',
 '../fonts',
 '../breakpoints';
+[aria-hidden="true"] {
+    visibility: hidden;
+}
+
 
 /** Layout **/
 
@@ -12,32 +16,15 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-}
-
-header {
-    grid-row: 1;
-}
-
-#logo-container {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-#site-title {
-    grid-row: 1;
-    grid-column: 2 / 4;
-    place-self: center;
-    font-size: 1rem;
-}
-
-#nav {
-    grid-column: 1 / 4;
-    grid-row: 4;
-    list-style: none;
-    place-self: center;
-    display: flex;
-    flex-direction: column;
-    width: inherit;
+    header {
+        grid-row: 1;
+    }
+    main {
+        grid-row: 2;
+    }
+    footer {
+        grid-row: 3;
+    }
 }
 
 #phone-number {
@@ -83,7 +70,11 @@ header {
     }
     #nav {
         grid-row: 2;
-        grid-column: 1 / 4;
+        grid-column: 3;
+        overflow: unset !important;
+        ul {
+            flex-direction: row;
+        }
     }
     // Turn phone link into regular text
     a[href^="tel:"] {
@@ -104,11 +95,6 @@ header {
         grid-column: 3;
     }
 }
-
-
-/** Ultra wide layout **/
-
-@media only screen and (min-width: $min-desktop) {}
 
 
 /* Other styles */
