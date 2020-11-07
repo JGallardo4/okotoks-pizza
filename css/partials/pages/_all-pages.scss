@@ -2,10 +2,6 @@
 '../mixins',
 '../fonts',
 '../breakpoints';
-[aria-hidden="true"] {
-    visibility: hidden;
-}
-
 
 /** Layout **/
 
@@ -50,13 +46,16 @@ main {
         padding: 0.5rem;
         padding-left: 0;
     }
-    i {
-        visibility: unset;
-    }
 }
 
 #social-media {
     text-align: right;
+    .social-link {
+        padding-left: 1rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .page-title {

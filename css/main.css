@@ -44,10 +44,6 @@ body {
 
 /**/
 /**/
-[aria-hidden="true"] {
-  visibility: hidden;
-}
-
 /** Layout **/
 /** Common Layout */
 body {
@@ -115,12 +111,16 @@ main {
   padding-left: 0;
 }
 
-#phone-number i {
-  visibility: unset;
-}
-
 #social-media {
   text-align: right;
+}
+
+#social-media .social-link {
+  padding-left: 1rem;
+}
+
+#social-media .social-link:hover {
+  text-decoration: underline;
 }
 
 .page-title {
