@@ -4,11 +4,40 @@
 
 /** About **/
 
+.external {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+#about-main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+#about-main-container {
+    place-self: center;
+    padding: 0 0.5rem;
+    max-width: 2000px;
+}
+
+#about-blurb {
+    text-indent: 2%;
+    padding-bottom: 3rem;
+    h1 {
+        text-align: center;
+    }
+    p {
+        padding-bottom: 1rem;
+    }
+}
+
 
 /** Layout **/
 
 #youtube-embed {
     display: grid;
+    padding-bottom: 3rem;
 }
 
 .video-container {

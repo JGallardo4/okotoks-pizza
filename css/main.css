@@ -71,10 +71,6 @@ body footer {
 
 main {
   font-family: "Montserrat";
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0.05rem;
-  line-height: 2rem;
 }
 
 #phone-number {
@@ -109,18 +105,6 @@ main {
 #phone-number a {
   padding: 0.5rem;
   padding-left: 0;
-}
-
-#social-media {
-  text-align: right;
-}
-
-#social-media .social-link {
-  padding-left: 1rem;
-}
-
-#social-media .social-link:hover {
-  text-decoration: underline;
 }
 
 .page-title {
@@ -419,10 +403,41 @@ body {
 }
 
 /** About **/
+.external:hover {
+  text-decoration: underline;
+}
+
+#about-main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+}
+
+#about-main-container {
+  place-self: center;
+  padding: 0 0.5rem;
+  max-width: 2000px;
+}
+
+#about-blurb {
+  text-indent: 2%;
+  padding-bottom: 3rem;
+}
+
+#about-blurb h1 {
+  text-align: center;
+}
+
+#about-blurb p {
+  padding-bottom: 1rem;
+}
+
 /** Layout **/
 #youtube-embed {
   display: -ms-grid;
   display: grid;
+  padding-bottom: 3rem;
 }
 
 .video-container {
@@ -495,7 +510,19 @@ body {
       grid-template-rows: auto 1fr auto;
 }
 
-#blurb {
+#social-media {
+  text-align: right;
+}
+
+#social-media .social-link {
+  padding-left: 1rem;
+}
+
+#social-media .social-link:hover {
+  text-decoration: underline;
+}
+
+#home-blurb {
   text-align: center;
   text-transform: uppercase;
   font-size: 2.5rem;
