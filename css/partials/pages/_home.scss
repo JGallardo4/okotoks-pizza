@@ -1,0 +1,41 @@
+#home-main {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+#blurb {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    padding-bottom: 2rem;
+}
+
+#jump-to-top {
+    text-align: center;
+}
+
+#main-container {
+    padding: 0 1rem;
+    align-self: stretch;
+}
+
+#promotions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    img {
+        width: 20rem;
+        height: auto;
+    }
+}
+
+.promotion {
+    width: min-content;
+    display: grid;
+    place-items: center;
+}

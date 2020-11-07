@@ -4,13 +4,25 @@
 
 /**/
 
+#main-container {
+    padding: 0 2rem;
+}
+
 .page-title {
     padding: 1rem 0;
     width: 100%;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
     letter-spacing: 0.5rem;
     @include titleFont();
+}
+
+.menu-link {
+    font-size: 2rem;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .menu-section {
@@ -20,6 +32,13 @@
     @include editorialFont();
     .menu-item {
         padding-bottom: 1.8rem;
+        img {
+            float: right;
+            object-fit: cover;
+            width: 10rem;
+            height: 10rem;
+            padding-left: 1rem;
+        }
     }
     .menu-item_title {
         color: $main-color;
@@ -41,10 +60,9 @@
     &>li:not(:first-of-type) {
         padding-left: 1rem;
     }
-}
-
-.menu-item_prices_price {
-    width: min-content;
+    .menu-item_prices_price {
+        width: min-content;
+    }
 }
 
 
