@@ -7,8 +7,11 @@
 
 main {
     max-width: 100vw;
+    display: grid;
     .main-container {
         place-self: center;
+        width: 100%;
+        max-width: 1800px;
         padding: 0 0.5rem;
     }
 }

@@ -49,10 +49,14 @@ body {
 /** Layout **/
 main {
   max-width: 100vw;
+  display: -ms-grid;
+  display: grid;
 }
 
 main .main-container {
   place-self: center;
+  width: 100%;
+  max-width: 1800px;
   padding: 0 0.5rem;
 }
 
@@ -584,8 +588,6 @@ body {
 }
 
 #location-main-container {
-  -ms-grid-column-align: stretch;
-      justify-self: stretch;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 2.5fr;
