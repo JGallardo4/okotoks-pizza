@@ -5,6 +5,12 @@
 #location-main {
     display: grid;
     grid-template-rows: auto 1fr;
+}
+
+#location-main-container {
+    justify-self: stretch;
+    display: grid;
+    grid-template-rows: 1fr 2.5fr;
     gap: 2rem;
 }
 

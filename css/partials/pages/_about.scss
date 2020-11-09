@@ -6,7 +6,7 @@
 
 .external {
     &:hover {
-        text-decoration: underline;
+        text-decoration: underline !important;
     }
 }
 
@@ -16,13 +16,12 @@
 }
 
 #about-main-container {
-    place-self: center;
-    padding: 0 0.5rem;
-    max-width: 2000px;
+    padding-top: 2rem;
 }
 
 #about-blurb {
     text-indent: 2%;
+    padding-top: 2rem;
     padding-bottom: 3rem;
     h1 {
         text-align: center;

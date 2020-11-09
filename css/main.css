@@ -28,6 +28,8 @@ a:link, a:visited, a:hover, a:active, a:hover {
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ul {
@@ -45,6 +47,15 @@ body {
 /**/
 /**/
 /** Layout **/
+main {
+  max-width: 100vw;
+}
+
+main .main-container {
+  place-self: center;
+  padding: 0 0.5rem;
+}
+
 /** Common Layout */
 body {
   min-height: 100vh;
@@ -118,6 +129,9 @@ main {
 
 /** Tablet Layout **/
 @media only screen and (min-width: 880px) {
+  main .main-container {
+    padding: 0 3rem;
+  }
   .toggle,
   .toggle-label {
     display: none;
@@ -176,6 +190,7 @@ body {
 /**/
 /**/
 header {
+  max-width: 100vw;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: max-content 1fr auto;
@@ -214,7 +229,6 @@ header #logo-and-title {
 
 #site-title {
   font-size: 1.75rem;
-  padding-right: 1rem;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -245,6 +259,7 @@ header #logo-and-title {
 
 /** Mobile Layout **/
 .toggle-label {
+  max-width: 100vw !important;
   padding: 1em;
   text-align: center;
   background-color: black;
@@ -404,7 +419,7 @@ body {
 
 /** About **/
 .external:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 #about-main {
@@ -415,13 +430,12 @@ body {
 }
 
 #about-main-container {
-  place-self: center;
-  padding: 0 0.5rem;
-  max-width: 2000px;
+  padding-top: 2rem;
 }
 
 #about-blurb {
   text-indent: 2%;
+  padding-top: 2rem;
   padding-bottom: 3rem;
 }
 
@@ -523,22 +537,15 @@ body {
 }
 
 #home-blurb {
+  padding: 2rem 0;
   text-align: center;
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: bolder;
-  padding-bottom: 2rem;
 }
 
 #jump-to-top {
   text-align: center;
-}
-
-#main-container {
-  padding: 0 1rem;
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
 }
 
 #promotions {
@@ -574,6 +581,15 @@ body {
   display: grid;
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
+}
+
+#location-main-container {
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2.5fr;
+      grid-template-rows: 1fr 2.5fr;
   gap: 2rem;
 }
 
@@ -669,10 +685,6 @@ body {
 }
 
 /**/
-#main-container {
-  padding: 0 2rem;
-}
-
 .page-title {
   padding: 1rem 0;
   width: 100%;
@@ -697,8 +709,8 @@ body {
 .menu-section {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(375px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   gap: 2vw;
   font-family: "Montserrat";
   font-weight: 400;
@@ -708,16 +720,15 @@ body {
 }
 
 .menu-section .menu-item {
+  max-width: 100vw;
   padding-bottom: 1.8rem;
 }
 
 .menu-section .menu-item img {
-  float: right;
   -o-object-fit: cover;
      object-fit: cover;
   width: 10rem;
   height: 10rem;
-  padding-left: 1rem;
 }
 
 .menu-section .menu-item_title {
@@ -728,7 +739,7 @@ body {
 }
 
 .menu-section .menu-item_description {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: lighter;
   padding-bottom: 1rem;
 }
@@ -751,6 +762,21 @@ body {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+}
+
+/** Tablet Layout **/
+@media only screen and (min-width: 880px) {
+  .menu-section {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .menu-section .menu-item img {
+    float: right;
+    padding-left: 1rem;
+  }
+  .menu-section .menu-item .menu-item_description {
+    font-size: 2rem;
+  }
 }
 
 /** Desktop Layout **/
